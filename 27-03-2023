@@ -1,0 +1,160 @@
+// c pointer program 
+
+#include<stdio.h>
+
+int main()
+{
+	float a,*p;
+	printf("Enter the value of a:");
+	scanf("%f",&a);
+	
+	p = &a;
+	printf("value of a is : %.2lf\n",*p);  //number
+	printf("value of a is : %.2lf\n",p);  //address
+	printf("value of a is : %.2lf\n",&a);  //address
+	printf("value of a is : %.2lf\n",a);  //number
+}
+
+// pointer program addition two value 
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b,*p,*q,c;
+	printf("enter the value:\n");
+	scanf("%d",&a);
+	printf("enter the value:\n");
+	scanf("%d",&b);
+	
+	p= &a;
+	q= &b;
+	c= *p+*q;
+	
+	printf("sum of a and b is : %d",c);
+}
+
+// swapping with pointer of any two variable
+
+#include<stdio.h>
+int main()
+{
+	int a=10,b=20,*p,*q,temp;
+	printf("enter the value of a and b\n\n");
+	p= &a;
+	q= &b;
+	
+	temp=*p;
+	*p=*q;
+	*q=temp;
+	
+	printf("\nafter swappig the value of \na: %d and \nb:%d",*p,*q,*temp);
+    return 0;
+}
+
+// structure program c - user defined datatype or derived
+
+#include<stdio.h>
+struct emp{
+	
+	int id;
+	float salary;
+	char name[20];
+}e1;
+
+int main()
+{
+	e1.id= 23;
+	printf("your id is : %d",e1.id);
+	
+	e1.salary =40000.00;
+	printf("\n your salary is :%.2lf",e1.salary);
+	
+	strcpy(e1.name, "ekta");
+	printf("\n your name is : ekta",e1.name);
+}
+
+#include<stdio.h>
+struct emp{
+	int id;
+	float salary;
+	char name[20];
+};
+
+int main()
+{
+	struct emp e1,e2;
+	
+	e1.id= 30;
+	printf("\n your id is : %d",e1.id);
+	
+	e1.salary=30000.00;
+	printf("\n your salary is : %.2lf",e1.salary);
+	
+	strcpy(e1.name,"ekta");
+	printf("\n your name is : %s \n",e1.name);
+	
+	e2.id=25;
+	printf("\n your id is : %d",e2.id);
+	
+	e2.salary=40000.00;
+	printf(" \n your salary is : %.2lf",e2.salary);
+	
+	strcpy(e2.name,"rani");
+	printf(" \n your name is : %s  ",e2.name);
+	
+	}	
+	
+   // union program c - user defined datatype or derived
+
+#include<stdio.h>
+
+union emp{
+	int id;
+	float salary;
+	char name[20];
+}e1;
+
+int main()
+{
+	e1.id= 96;
+	printf("your id is : %d",e1.id);
+	
+	e1.salary= 30000;
+	printf("\nyour salary is : %.2lf",e1.salary);
+	
+	strcpy(e1.name, "akansha");
+	printf("\nyour name is : ekta",e1.name);
+}
+
+#include<stdio.h>
+
+union emp{
+	int id;
+	float salary;
+	char name [20];
+};
+
+    int main()
+    {
+    	union emp e1,e2;
+    	
+    	
+    	e1.id=23;
+    	printf("your id is: %d",e1.id);
+    	
+    	e1.salary= 40000;
+    	printf("\nyour salary is: %.2lf",e1.salary);
+    	
+    	strcpy(e1.name,"akansha");
+    	printf("\nyour name is: %s\n",e1.name);
+    	
+    	e2.id=43;
+    	printf("\nyour id is: %d",e2.id);
+    	
+    	e2.salary=42000;
+    	printf("\nyour salary is: %.2lf",e2.salary);
+    	
+    	strcpy(e2.name,"chhaya");
+    	printf("\nyour name is: %s",e2.name);
+	}
