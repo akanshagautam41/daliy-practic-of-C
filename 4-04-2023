@@ -1,0 +1,69 @@
+// menu card of hotel.
+
+#include<stdio.h>
+int main()
+{
+	int pizza=180;
+	int burger=100;
+	int dosa=120;
+	int idli=50;
+	int choose,quantity,amount,total;
+	char addanother;
+	
+ do{
+ 	
+	printf("\n...........Menu.........\n");
+	printf("1. Pizza..... pizza =180rs/pcs\n");
+	printf("2. burger.... burger =100rs/pcs\n");
+	printf("3. dosa...... dosa =120rs/pcs\n");
+	printf("4. idli...... idli =50rs/pcs\n");
+	printf("please enter your choice....:");
+	scanf("%d",&choose);
+	
+	
+		switch(choose)
+		{
+			case 1 : 
+			 printf("\nyou have selected pizza.");
+		         printf("\nenter the quantity:");
+		         scanf("%d",&quantity);
+		         total=amount*quantity;
+		         total=180*quantity;
+		         printf("total amount is %d:",total);
+		         break;
+		         
+		         case 2 : printf("\nyou have selected burger.");
+		         printf("\nenter the quantity:");
+		         scanf("%d",&quantity);
+		         total=amount*quantity;
+		         total=100*quantity;
+		         printf("total amount is %d:",total);
+		         break;
+		         
+		         case 3 : printf("\nyou have selected dosa.");
+		         printf("\nenter the quantity:");
+		         scanf("%d",&quantity);
+		         total=amount*quantity;
+		         total=120*quantity;
+		         printf("total amount is %d:",total);
+		         break;
+		         
+		         case 4: printf("\nyou have selected idli.");
+		         printf("\nenter the quantity:");
+		         scanf("%d",&quantity);
+		         total=amount*quantity;
+		         total=50*quantity;
+		         printf("total amount is %d:",total);
+		         break;
+		         
+		         default : printf("\ninvalid choice...");
+		         break;
+		}
+		
+		 printf("\nDo you want place more order? y&n ? :");
+		 addanother =getch();
+		        
+	}
+	while (addanother =='y' || addanother == 'Y');
+	printf("\nthankyou for order");
+}
