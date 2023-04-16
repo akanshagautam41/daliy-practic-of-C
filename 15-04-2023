@@ -1,0 +1,188 @@
+
+#include<stdio.h>
+
+union student{
+	char name[40];
+	int roll;
+	float salary;
+};
+
+main()
+{
+	union student s1;
+	strcpy(s1.name,"parth");
+	s1.roll = 101;
+	s1.salary=100000.00;
+	
+	printf("your name, roll,salary %s \n%d \n%f",s1.name,s1.roll,s1.salary);
+}
+
+// sturcture with array
+
+#include<stdio.h>
+
+struct emp{
+	
+	int id;
+	char e_name[50];
+};
+
+int main()
+
+{
+	struct emp ep[3];
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("enter your id:");
+		scanf("%s",&ep[i].id);
+		
+		printf("enter your name:");
+		scanf("%s",&ep[i].e_name);
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("your id is : %d\n",ep[i].id);
+		printf("your name is : %s\n",ep[i].e_name);
+	}
+}
+
+// structure with function
+
+#include<stdio.h>
+struct student{
+	char name[40];
+	int roll;
+}s1;
+
+void getdata(struct student s1);
+
+main()
+{
+	strcpy(s1.name,"parth");
+	s1.roll=101;
+	
+	getdata(s1); // argument pass
+}
+
+void getdata(struct student s1)
+{
+	printf("your name is : %s\n",s1.name);
+	printf("your roll no is : %d",s1.roll);
+}
+
+// sturcture with array
+
+#include<stdio.h>
+
+struct emp{
+	char name[300];
+	int id;
+	float salary;
+	int age;
+	char address[500];
+};
+
+main()
+{
+	struct emp e[2];
+	int i;
+	
+	for(i=1;i<=2;i++)
+	{
+		printf("enter your name is : \n");
+		scanf("%s",&e[i].name);
+		printf("enter your id is : \n");
+		scanf("%d",&e[i].id);
+		printf("enter your salary is : \n");
+		scanf("%f",&e[i].salary);
+		printf("enter your age is : \n");
+		scanf("%d",&e[i].age);
+		printf("enter your address is : \n");
+		scanf("%s",&e[i].address);
+	}
+	
+	for(i=1;i<=2;i++)
+	{
+		printf("\n")
+		printf("your name is: %s\n",e[i].name);
+		printf("your id is: %d\n",e[i].id);
+		printf("your salary is: %f\n",e[i].salary);
+		printf("your age is : %d\n",e[i].age);
+		printf("your address is : %s\n",e[i].address);
+	}
+}
+
+#include<stdio.h>
+
+struct trainer{
+	
+	int id;
+	char e_name[40];
+	
+	struct student{
+		int id;
+		char s_name[50];
+	}s1;
+}t1;
+
+int main()
+{
+	t1.id =101;
+	printf("your id is : %d\n",t1.id);
+	
+	strcpy(t1.e_name,"dev");
+	printf("your name is : %s\n",t1.e_name);
+	
+	t1.s1.id =201;
+	printf("your id is : %d\n",t1.s1.id);
+	
+	strcpy(t1.s1.s_name,"ritu");
+	printf("your name is : %s\n",t1.s1.s_name);
+}
+
+#include<stdio.h>
+
+struct trainer{
+	int id;
+	char t_name[30];
+	
+	struct student{
+		int id1;
+		char e_name[40];
+	};
+};
+int main()
+{
+	struct trainer t1[3];
+	struct student s1[3];
+	int i;
+	
+	for(i=0;i<3;i++)
+	{
+	printf("enter trainer id : %d");
+	scanf("%d",&t1[i].id);
+	
+	printf("enter trainer name : %s");
+	scanf("%s",&t1[i].t_name);	
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("your id is : %d\n",t1[i].id);
+		printf("your name is : %s\n",t1[i].t_name);
+	}
+
+	for(i=0;i<3;i++)
+	{
+	printf("enter student id : %d");
+	scanf("%d",&t1.s1[i].id1);
+	
+	printf("enter student name : %s");
+	scanf("%s",&t1.s1[i].e_name);	
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("your id is : %d\n",t1.s1[i].id1);
+		printf("your name is : %s\n",t1.s1[i].e_name);
+	}
+}
